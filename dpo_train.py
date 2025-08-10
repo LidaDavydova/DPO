@@ -303,5 +303,5 @@ def main():
 
     # save statistics
     df = pd.DataFrame(statistic)
-    df.to_csv(f'{out_dir}/stat.csv', index=False)
+    df.to_csv(f'{out_dir}/train_stat.csv', index=False)
 
