@@ -5,13 +5,15 @@ import test
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--mode', choices=['train', 'test'], required=True)
-    parser.add_argument('--model_path', required=True)
+    parser.add_argument('--checkpoint_dir', required=False)
     args = parser.parse_args()
     
     if args.mode == 'train':
-        print(f"Training and saving to {args.model_path}")
+        print(f"Training")
+        dpo_train.main()
     else:
         print(f"Loading model from {args.model_path} for evaluation")
+        test.main(checkpoint_dir)
 
 if __name__ == "__main__":
     main()

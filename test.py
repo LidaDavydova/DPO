@@ -49,5 +49,3 @@ def main(ckpt_dir="checkpoints/checkpoint_beta0.3"):
 
     eval_metrics = trainer.evaluate(test_loader)
     print(f"Test metrics: {eval_metrics}")
-
-main()

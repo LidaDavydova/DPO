@@ -14,10 +14,10 @@ docker build -t dpo .
 docker run -it --gpus all -v $(pwd):/app dpo
 
 # run train
-python main.py --mode train --model_path checkpoints/checkpoint_beta0.3
+python main.py --mode train
 
 # run test
-python main.py --mode test --model_path checkpoints/checkpoint_beta0.3
+python main.py --mode test --checkpoint_dir checkpoints/checkpoint_beta0.3
 ```
 
 
