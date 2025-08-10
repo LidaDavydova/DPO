@@ -1,6 +1,3 @@
-{
-  "_from_model_config": true,
-  "bos_token_id": 50256,
-  "eos_token_id": 50256,
-  "transformers_version": "4.55.0"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:93a776576419c5dff3550b6d37f9be1d0ec655186dff8e8753a8bd2d3f47257a
+size 119
