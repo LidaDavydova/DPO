@@ -1,17 +1,25 @@
-# DPO
+# Direct Preference Optimization
+
+## Used resourses:
+* NVIDIA GeForce RTX 3090
+* Python 3.12.8
 
 ## What was used:
-* gpt2 small model
+* GPT2 model
 * Anthropic/hh-rlhf dataset with 3000 samples for TRAIN/VAL
 * Anthropic/hh-rlhf dataset with 500 samples for TEST
 * max_length = 256
 * batch_size = 16
 * device = cuda
 
+## [Link to ckeckpoints](https://disk.yandex.ru/d/VwVExhptubkUWw)
+
 ## Instructions to run DPO
+- Load checkpoints to use for test
+- Run docker and commands:
 ```
 docker build -t dpo .
-docker run -it --gpus all -v $(pwd):/app dpo
+docker run -it -v $(pwd):/app dpo
 
 # run train
 python main.py --mode train

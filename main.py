@@ -12,8 +12,8 @@ def main():
         print(f"Training")
         dpo_train.main()
     else:
-        print(f"Loading model from {args.model_path} for evaluation")
-        test.main(checkpoint_dir)
+        print(f"Loading model from {args.checkpoint_dir} for evaluation")
+        test.main(args.checkpoint_dir)
 
 if __name__ == "__main__":
     main()
