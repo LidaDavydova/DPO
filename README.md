@@ -28,11 +28,13 @@ python main.py --mode train
 python main.py --mode test --checkpoint_dir checkpoints/checkpoint_beta0.3
 ```
 
-
 ## Implementation details
+
+### Train
+
 I saved checkpoints for every epochs and for multiple beta parameters - (0.3, 0.5, 0.7)
 
-Overall, after tested possible hyperparameters beta and lr, chosen reward and rejected reward both were negative. Still model ranked chosen higher than rejected.
+Overall, after testing possible hyperparameters beta and lr, chosen reward and rejected reward both were negative. Still model ranked chosen higher than rejected. And reward always was positive that says about correct learning.
 
 With param beta=0.3, lr=1e-4, epochs=5:
 While analysing train and val statistic, after 3 epochs already model started to overfit, but reward only increased.
@@ -53,3 +55,12 @@ With param beta=0.7, lr=1e-5, epochs=10:
 I wanted to test if for lower beta we need lower lr. 
 While analysing train and val statistic, after 4 epochs already model started to overfit, but reward only increased.
 ![alt text](assets/beta0.7.png)
+
+### Test
+I wanted to interpret results in the text format and to show that if to give to trained model prompt and 2 responses, it will rank more preferable higher.
+But this is identical as numerical interpretation.
+So I have just took 500 samples from Anthropic/hh-rlhf dataset and the best performance checkpoint - checkpoint_beta0.3.
+
+Results show in avg correct preference ranking and reward_margin is small, but not much:
+
+Test metrics: {'loss': 0.66, 'chosen_reward': -1.88, 'rejected_reward': -2.06, 'reward_margin': 0.17}
